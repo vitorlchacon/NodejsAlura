@@ -19,6 +19,14 @@ function createDBConnection(){
 			database: 'casadocodigo_nodejs_test'
 		});
 	}
+	if(process.env.NODE_ENV == 'production'){
+		return mysql.createConnection({
+			host: 'localhost',
+			user: 'root',
+			password: 'root',
+			database: 'casadocodigo_nodejs_test'
+		});
+	}
 }
 
 // Wrapper, pois só se passa a informação da função acima, sem carregá-la com o intuito de
